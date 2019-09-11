@@ -1,0 +1,12 @@
+{
+  "name": "remedocs",
+  "version": "1.0.0",
+  "description": "11ty docs for remedy",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "eleventy": "^0.2.0",
+    "flat-cache": "^2.0.1",
+    "node-fetch": "^2.6.0"
+  }
+}
