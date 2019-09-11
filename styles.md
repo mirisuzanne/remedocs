@@ -11,6 +11,12 @@ eleventyExcludeFromCollections: true
 
 # {{ css.name }}
 
+{% for pattern in css.docs.patterns %}
+## {{ pattern.name }}
+
+{{ pattern.description }}
+
 ```
-{{ css }}
+{{ pattern.css }}
 ```
+{% endfor %}
