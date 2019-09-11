@@ -7,11 +7,7 @@ templateEngineOverride: njk, md
 ## CSS
 
 {% for page in content.css %}
-## `{{ page.path }}`
-
-```
-{{ page.body }}
-```
+- [{{ page.name }}](/css/{{ page.name | slug }}/)
 {% endfor %}
 
 ------
@@ -19,9 +15,5 @@ templateEngineOverride: njk, md
 ## Markdown
 
 {% for page in content.md %}
-## `{{ page.path }}`
-
-```
-{{ page.body }}
-```
+- [{{ page.name }}](/prose/{{ page.name | slug }}/)
 {% endfor %}

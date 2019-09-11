@@ -1,9 +1,9 @@
 ---
 pagination:
-  data: content.md
+  data: content.css
   size: 1
   alias: page
-permalink: /prose/{{ page.name | slug }}/
+permalink: /css/{{ page.name | slug }}/
 renderData:
   title: 'Just {{ page.name }}'
 eleventyExcludeFromCollections: true
