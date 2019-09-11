@@ -1,16 +1,16 @@
 ---
 pagination:
-  data: content.css
+  data: dox
   size: 1
-  alias: page
-permalink: /css/{{ page.name | slug }}/
+  alias: css
+permalink: /css/{{ css.name | slug }}/
 renderData:
-  title: 'Just {{ page.name }}'
+  title: 'Just {{ css.name }}'
 eleventyExcludeFromCollections: true
 ---
 
-# {{ page.name }}
+# {{ css.name }}
 
 ```
-{{ page.body }}
+{{ css }}
 ```

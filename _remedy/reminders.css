@@ -1,0 +1,14 @@
+/* doxray
+name: H1 Margins
+description: This is a test
+group: headings
+*/
+h1 { margin: 1em; }
+
+/* doxray
+name: Nav
+description: This is also a test
+group: nav
+*/
+nav ul { margin: 1em; }
+

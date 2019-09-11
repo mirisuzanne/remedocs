@@ -1,0 +1,13 @@
+/* doxray
+name: Border-Box Sizing
+description: This should be the default, of course
+group: global
+*/
+*, *::before, *::after { box-sizing: border-box; }
+
+/* doxray
+name: Body
+description: We don't need default space around the body element
+group: global
+*/
+body { margin: 0; }
