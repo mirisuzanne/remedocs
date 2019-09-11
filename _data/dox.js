@@ -8,7 +8,7 @@ async function fetchData(fileName) {
   return doxray([filePath]);
 }
 module.exports = async function() {
-  const files = ['remedy.css'];
+  const files = ['remedy.css', 'reminders.css'];
 
   return files.map(fileName => {
     const name = fileName.split('.')[0];
