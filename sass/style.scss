@@ -1,0 +1,29 @@
+@import '../_remedy/remedy';
+@import 'fonts';
+
+html {
+  --zilla: 'Zilla Slab', serif;
+  --zilla-highlight: 'Zilla Slab Highlight', serif;
+  --inter: 'Inter', sans-serif;
+
+  font-family: 'Inter', sans-serif;
+  font-size: calc(1em + 0.25vw);
+}
+
+body {
+  padding: 1em;
+  margin: 1em auto;
+  max-width: 40em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--zilla);
+}
+
+strong {
+  font-family: var(--zilla-highlight);
+}

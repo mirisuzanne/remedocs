@@ -10,6 +10,7 @@
     {{ '|' if meta_title else '' }}
     {{repo.name }}
   </title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <header>
@@ -27,7 +28,7 @@
 
       {% for file in dox %}
       <li>
-        <a href="/css/{{ file.info.slug }}/" data-nav="css/{{ file.info.slug }}">
+        <a href="/docs/{{ file.info.slug }}/" data-nav="docs/{{ file.info.slug }}">
           {{ file.info.label }}
         </a>
       </li>

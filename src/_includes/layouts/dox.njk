@@ -4,11 +4,11 @@ layout: base
 
 <code>{{ css.info.filename }}</code>
 
-{{ css.info.meta | md | safe }}
+{{ css.info.note | md | safe }}
 
-{% for group, patterns in css.patterns | groupby("group") %}
+{% for group, patterns in css.patterns | groupby("docs") %}
 <section>
-  <h2>{{ group or '@@@' }}</h2>
+  <h2>{{ group or 'General' }}</h2>
 
   {% for pattern in patterns %}
   <article id="{{ pattern.slug }}">
@@ -17,7 +17,13 @@ layout: base
         {{ pattern.label }}
       </a>
     </h3>
-    {{ pattern.description | md | safe }}
+
+    {% if pattern.issue %}
+      <a href="{{ pattern.issue }}">
+        github issue
+      </a>
+    {% endif %}
+    {{ pattern.note | md | safe }}
     {% highlight "css" %}{{ pattern.css }}{% endhighlight %}
   </article>
   {% endfor %}

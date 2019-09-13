@@ -5,13 +5,17 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "serve": "npx @11ty/eleventy --serve"
+    "build-site": "npx @11ty/eleventy",
+    "build-sass": "sass sass/style.scss src/css/style.css",
+    "build": "yarn build-sass && yarn build-site",
+    "serve": "npx @11ty/eleventy --serve",
+    "watch": "sass --watch sass/style.scss src/css/style.css"
   },
   "devDependencies": {
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "doxray": "^0.7.2",
     "eleventy": "^0.2.0",
-    "markdown-it": "^10.0.0"
+    "markdown-it": "^10.0.0",
+    "sass": "^1.22.12"
   }
 }

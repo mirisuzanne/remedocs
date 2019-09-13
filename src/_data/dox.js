@@ -16,8 +16,8 @@ module.exports = function() {
       const filePath = path.join(styleDir, file);
       const docs = doxray([filePath]);
 
-      data.info = docs.patterns.filter(doc => doc.meta)[0];
-      data.patterns = docs.patterns.filter(doc => !doc.meta);
+      data.info = docs.patterns.filter(pattern => pattern.docs === 'meta')[0];
+      data.patterns = docs.patterns.filter(pattern => pattern.docs !== 'meta');
 
       css.push(data);
     });

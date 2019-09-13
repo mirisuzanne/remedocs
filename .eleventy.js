@@ -15,6 +15,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPairedShortcode('markdown', type.render);
   eleventyConfig.addPairedShortcode('markdownInline', type.inline);
 
+  // assets
+  eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/fonts");
+
   return {
     markdownTemplateEngine: "njk",
     dir: {

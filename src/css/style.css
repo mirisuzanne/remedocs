@@ -5,15 +5,14 @@ note: |
   as a starter for any project.
 docs: meta
 */
-
-
 /* doxray
 label: Box Sizing
 note: Use border-box by default, globally.
 docs: global
 */
-*, ::before, ::after { box-sizing: border-box; }
-
+*, ::before, ::after {
+  box-sizing: border-box;
+}
 
 /* doxray
 label: Line Sizing
@@ -25,45 +24,65 @@ links:
     url: https://drafts.csswg.org/css-inline-3/#line-sizing-property
 docs: global
 */
-html { line-sizing: normal; }
-
+html {
+  line-sizing: normal;
+}
 
 /* doxray
 label: Body Margins
 note: Remove the tiny space around the edge of the page.
 docs: global
 */
-body { margin: 0; }
-
+body {
+  margin: 0;
+}
 
 /* doxray
 label: Heading Sizes
 note: Switch to rem units for headings
 docs: typography
 */
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.17rem; }
-h4 { font-size: 1.00rem; }
-h5 { font-size: 0.83rem; }
-h6 { font-size: 0.67rem; }
+h1 {
+  font-size: 2rem;
+}
 
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
 
 /* doxray
 label: H1 Margins
 note: Keep h1 margins consistent, even when nested
 docs: typography
 */
-h1 { margin: 0.67em 0; }
-
+h1 {
+  margin: 0.67em 0;
+}
 
 /* doxray
 label: Pre Wrapping
 note: Overflow by default is bad...
 docs: typography
 */
-pre { white-space: pre-wrap; }
-
+pre {
+  white-space: pre-wrap;
+}
 
 /* doxray
 label: Horizontal Rule
@@ -81,7 +100,6 @@ hr {
   overflow: visible;
 }
 
-
 /* doxray
 label: Responsive Embeds
 note: |
@@ -96,7 +114,6 @@ img, svg, video, canvas, audio, iframe, embed, object {
   max-width: 100%;
 }
 
-
 /* doxray
 label: Aspect Ratios
 note: |
@@ -110,7 +127,6 @@ img, svg, video, canvas {
   height: auto;
 }
 
-
 /* doxray
 label: Audio Width
 note: |
@@ -118,24 +134,27 @@ note: |
   and audio files are unlikely to come with a width attribute
 docs: embedded elements
 */
-audio { width: 100%; }
-
+audio {
+  width: 100%;
+}
 
 /* doxray
 label: Image Borders
 note: Remove the border on images inside links in IE 10 and earlier
 docs: legacy browsers
 */
-img { border-style: none; }
-
+img {
+  border-style: none;
+}
 
 /* doxray
 label: SVG Overflow
 note: Hide the overflow in IE 10 and earlier
 docs: legacy browsers
 */
-svg { overflow: hidden; }
-
+svg {
+  overflow: hidden;
+}
 
 /* doxray
 label: HTML5 Elements
@@ -146,7 +165,6 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
-
 /* doxray
 label: Checkbox & Radio Inputs
 note: |
@@ -154,8 +172,96 @@ note: |
   2. Remove the padding in IE 10
 docs: legacy browsers
 */
-[type='checkbox'],
-[type='radio'] {
+[type=checkbox],
+[type=radio] {
   box-sizing: border-box;
   padding: 0;
 }
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-regular-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-italic-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-bold-webfont.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-bolditalic-webfont.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("../fonts/ZillaSlab-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("../fonts/ZillaSlab-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("../fonts/ZillaSlab-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("../fonts/ZillaSlab-BoldItalic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Zilla Slab Highlight";
+  src: url("../fonts/ZillaSlabHighlight-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Zilla Slab Highlight";
+  src: url("../fonts/ZillaSlabHighlight-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+html {
+  --zilla: "Zilla Slab", serif;
+  --zilla-highlight: "Zilla Slab Highlight", serif;
+  --inter: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-size: calc(1em + 0.25vw);
+}
+
+body {
+  padding: 1em;
+  margin: 1em auto;
+  max-width: 40em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--zilla);
+}
+
+strong {
+  font-family: var(--zilla-highlight);
+}
+
+/*# sourceMappingURL=style.css.map */
