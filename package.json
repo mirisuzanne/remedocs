@@ -11,10 +11,7 @@
   "devDependencies": {
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "doxray": "^0.7.2",
-    "dss": "^1.0.4",
     "eleventy": "^0.2.0",
-    "flat-cache": "^2.0.1",
-    "markdown-it": "^10.0.0",
-    "node-fetch": "^2.6.0"
+    "markdown-it": "^10.0.0"
   }
 }
