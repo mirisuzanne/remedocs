@@ -1,0 +1,26 @@
+---
+layout: base
+---
+
+<code>{{ css.info.filename }}</code>
+
+{{ css.info.meta | md | safe }}
+
+{% for group, patterns in css.patterns | groupby("group") %}
+<section>
+  <h2>{{ group or '@@@' }}</h2>
+
+  {% for pattern in patterns %}
+  <article id="{{ pattern.slug }}">
+    <h3>
+      <a href="#{{ pattern.slug }}">
+        {{ pattern.label }}
+      </a>
+    </h3>
+    {{ pattern.description | md | safe }}
+    {% highlight "css" %}{{ pattern.css }}{% endhighlight %}
+  </article>
+  {% endfor %}
+
+</section>
+{% endfor %}

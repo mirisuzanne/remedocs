@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% set meta_title = renderData.title or title %}
+  <title>
+    {{ meta_title }}
+    {{ '|' if meta_title else '' }}
+    {{repo.name }}
+  </title>
+</head>
+<body>
+  <header>
+    <a href="/" rel="home">{{ repo.name }}</a>
+    by <strong>Mozilla Developer Relations</strong>
+  </header>
+
+  <nav>
+    <ul>
+      <li>
+        <a href="{{ repo.github }}">
+          GitHub »
+        </a>
+      </li>
+
+      {% for file in dox %}
+      <li>
+        <a href="/css/{{ file.info.slug }}/" data-nav="css/{{ file.info.slug }}">
+          {{ file.info.label }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <main>
+    <h1>
+      {{ (renderData.h1 or h1 or meta_title or 'Title Required') | mdInline | safe }}
+    </h1>
+
+    {{ content | safe }}
+  </main>
+</body>
+</html>

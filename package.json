@@ -4,9 +4,14 @@
   "description": "11ty docs for remedy",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve"
+  },
   "devDependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "doxray": "^0.7.2",
     "eleventy": "^0.2.0",
-    "flat-cache": "^2.0.1",
-    "node-fetch": "^2.6.0"
+    "markdown-it": "^10.0.0"
   }
 }
