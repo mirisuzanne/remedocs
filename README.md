@@ -7,13 +7,13 @@ as a static-site generator
 and [Doxray](https://github.com/himedlooff/doxray)
 to parse CSS comments.
 
-## Install dependencies:
+## Install dependencies
 
 ```
 yarn
 ```
 
-## Build the site:
+## Build the site
 
 ```
 yarn build
