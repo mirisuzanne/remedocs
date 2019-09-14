@@ -1,0 +1,28 @@
+.docs-nav {
+  grid-area: nav;
+  padding: 0 1em;
+
+  @media (min-width: 40em) {
+    float: left;
+    padding: 2em 1em;
+  }
+
+  strong {
+    display: block;
+    margin-top: 1em;
+  }
+
+  ul {
+    margin: 0.5em;
+    padding: 0;
+  }
+}
+
+// active nav
+.not-active {
+  text-decoration: none;
+}
+
+.is-active {
+  color: black;
+}

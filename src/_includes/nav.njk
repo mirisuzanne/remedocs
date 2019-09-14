@@ -1,15 +1,17 @@
-{% macro docs(files) %}
+{% macro docs(files, page) %}
   <ul>
     {% for file in files %}
-      {{ doc(file.info.label, file.info.slug) }}
+      {{ doc(file.info.label, file.info.slug, page) }}
     {% endfor %}
   </ul>
 {% endmacro %}
 
-{% macro doc(label, slug) %}
+{% macro doc(label, slug, page) %}
   {% set slug = slug or label | slug %}
+  {% set url = ['/docs/', slug, '/'] | join %}
   <li>
-    <a href="/docs/{{ slug }}/">
+    <a href="/docs/{{ slug }}/"
+      class="{% if url == page.url %}is{% else %}not{% endif %}-active">
       {{ label }}
     </a>
   </li>

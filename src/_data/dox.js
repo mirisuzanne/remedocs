@@ -36,6 +36,8 @@ module.exports = function() {
 
       css.push(data);
     });
+
+    css.sort((a, b) => a.info.label > b.info.label);
   });
 
   // get any markdown
@@ -60,6 +62,8 @@ module.exports = function() {
 
         md.push(data);
       });
+
+      md.sort((a, b) => a.info.label > b.info.label);
   });
 
   return {

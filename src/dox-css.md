@@ -7,5 +7,6 @@ pagination:
 permalink: /docs/{{ file.info.slug }}/
 renderData:
   title: '{{ file.info.filename }}'
+  location: '{{ file.info.slug }}'
 eleventyExcludeFromCollections: true
 ---

@@ -1,0 +1,14 @@
+main {
+  display: flow-root;
+  grid-area: main;
+  max-width: 40em;
+  padding: 1em;
+}
+
+.version-error {
+  background: maroon !important;
+
+  &::after {
+    content: "[versions don't match]";
+  }
+}

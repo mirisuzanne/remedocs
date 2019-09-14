@@ -1,30 +1,14 @@
 @import 'fonts';
-@import 'remedy';
-@import 'prism';
 
-html {
-  --zilla: 'Zilla Slab', serif;
-  --zilla-highlight: 'Zilla Slab Highlight', serif;
-  --inter: 'Inter', sans-serif;
+@import 'remedy/remedy';
+@import 'remedy/reminders';
 
-  font-family: 'Inter', sans-serif;
-  font-size: calc(1em + 0.25vw);
-}
+@import 'defaults';
 
-body {
-  padding: 1em;
-  margin: 1em auto;
-  max-width: 40em;
-}
+@import 'layout';
+@import 'banner';
+@import 'nav';
+@import 'main';
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: var(--zilla);
-}
-
-strong {
-  font-family: var(--zilla-highlight);
-}
+@import 'code/a11y-dark';
+@import 'code/prism';

@@ -1,6 +1,7 @@
 ---
 layout: base
 docs_nav: true
+hide_title: true
 pagination:
   data: dox.md
   size: 1
@@ -8,7 +9,8 @@ pagination:
 permalink: /docs/{{ file.info.label | slug }}/
 renderData:
   title: '{{ file.info.label }}'
+  location: '{{ file.info.label | slug }}'
 eleventyExcludeFromCollections: true
 ---
 
-{{ file.content }}
+{{ file.content | safe }}

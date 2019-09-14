@@ -15,35 +15,29 @@
 <body>
   {% import "nav.njk" as nav %}
 
-  <header>
-    <a href="/" rel="home">{{ dox.repo.name }}</a>
+  <header class="banner">
+    <a href="/" rel="home">
+      <strong>{{ dox.repo.name }}</strong>
+      docs
+    </a>
     <a href="{{ site.mozdev }}">{{ site.author | mdInline | safe }}</a>
   </header>
 
-  <nav>
-    <ul>
-      <li>
-        <a href="/docs/readme/">Documentation</a>
-      </li>
-      <li>
-        <a href="{{ site.github }}">Github</a>
-      </li>
-    </ul>
-  </nav>
-
   {% if docs_nav %}
-    <nav class="docs">
+    <nav class="docs-nav">
       <strong>Information</strong>
-      {{ nav.docs(dox.md) }}
+      {{ nav.docs(dox.md, page) }}
       <strong>Remedies</strong>
-      {{ nav.docs(dox.css) }}
+      {{ nav.docs(dox.css, page) }}
     </nav>
   {% endif %}
 
   <main>
-    <h1>
-      {{ (renderData.h1 or h1 or meta_title or 'Title Required') | mdInline | safe }}
-    </h1>
+    {% if not hide_title %}
+      <h1>
+        {{ (renderData.h1 or h1 or meta_title or 'Title Required') | mdInline | safe }}
+      </h1>
+    {% endif %}
 
     {{ content | safe }}
   </main>

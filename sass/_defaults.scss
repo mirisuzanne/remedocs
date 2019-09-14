@@ -1,0 +1,52 @@
+html {
+  --zilla: 'Zilla Slab', serif;
+  --zilla-highlight: 'Zilla Slab Highlight', serif;
+  --inter: 'Inter', sans-serif;
+
+  font-family: 'Inter', sans-serif;
+  font-size: calc(1em + 0.5vw);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--zilla);
+}
+
+a {
+  &:link,
+  &:visited {
+    text-decoration-color: black;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: 0.125em;
+    text-underline-offset: 0.125em;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration-color: currentColor;
+  }
+}
+
+strong {
+  font-family: var(--zilla-highlight);
+}
+
+ul,
+ol {
+  padding-left: 1em;
+
+  @media (min-width: 40em) {
+    padding: 0;
+  }
+}
+
+blockquote {
+  border-left: 0.5em solid silver;
+  font-size: 1.1em;
+  margin-left: 0;
+  padding-left: 0.5em;
+}

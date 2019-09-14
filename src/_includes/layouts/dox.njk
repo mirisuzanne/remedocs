@@ -5,9 +5,12 @@ docs_nav: true
 
 {% import "doxray.njk" as doxray %}
 
-<code>v{{ dox.repo.version }}</code>
-{{ doxray.describe(file.info.note, file.info.links) }}
-{{ doxray.highlight(file.info.css) }}
+<code {% if dox.repo.version != file.info.version %}class="version-error"{% endif %}>
+  v{{ file.info.version }}
+</code>
+
+{{ doxray.describe(file.info) }}
+{{ doxray.code(file.info.css) }}
 
 {% for group, patterns in file.patterns | groupby("docs") %}
 <hr>
@@ -17,8 +20,8 @@ docs_nav: true
   {% for pattern in patterns %}
   <article id="{{ pattern.slug }}">
     {{ doxray.heading(pattern.label, pattern.slug) }}
-    {{ doxray.describe(pattern.note, pattern.links) }}
-    {{ doxray.highlight(pattern.css) }}
+    {{ doxray.describe(pattern) }}
+    {{ doxray.code(pattern.css) }}
   </article>
   {% endfor %}
 

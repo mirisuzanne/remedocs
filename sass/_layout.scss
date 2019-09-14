@@ -1,0 +1,13 @@
+body {
+  display: grid;
+  grid: 'banner' auto
+        'nav' auto
+        'main' 1fr /
+        auto;
+
+  @media (min-width: 40em) {
+    grid: 'banner banner banner' auto
+          'nav main .' 1fr /
+          1fr minmax(auto, 40em) 1fr;
+  }
+}

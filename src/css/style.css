@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Inter";
   src: url("../fonts/inter-regular-webfont.woff2") format("woff2");
@@ -276,6 +277,220 @@ category: legacy browsers
   padding: 0;
 }
 
+/* doxray
+label: Reminders
+
+note: |
+  All the remedies in this file are commented out by default,
+  because they could cause harm as general defaults.
+  These should be used as reminders
+  to handle common styling issues
+  in a way that will work for your project and users.
+  Read, explore, uncomment, and edit as needed.
+
+category: file
+*/
+/* doxray
+label: List Style
+
+note: |
+  List styling is not usually desired in navigation,
+  but this also removes list-semantics for screen-readers
+
+links:
+  - https://github.com/mozdevs/cssremedy/issues/15
+
+category: navigation
+*/
+nav ul {
+  list-style: none;
+}
+
+/* doxray
+label: List Voiceover
+
+note: |
+  1. Add zero-width-space to prevent VoiceOver disable
+  2. Absolute position ensures no extra space
+
+links:
+  - https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/
+
+category: navigation
+*/
+nav li:before {
+  content: "​";
+  position: absolute;
+}
+
+/* doxray
+label: Reduced Motion
+
+note: |
+  1. Immediately jump any animation to the end point
+  2. Remove transitions & fixed background attachment
+
+links:
+  - https://github.com/mozdevs/cssremedy/issues/11
+
+category: accessibility
+*/
+/* @media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1s !important;
+    animation-duration: 1s !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+  }
+} */
+/* doxray
+label: Line Heights
+
+note: |
+  The default `normal` line-height is tightly spaced,
+  but takes font-metrics into account --
+  which is important for many fonts.
+  Looser spacing may improve readability,
+  but may also cause problems in some scripts.
+
+links:
+  - https://github.com/mozdevs/cssremedy/issues/7
+
+category: typography
+*/
+html {
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.25;
+}
+
+caption, figcaption, label, legend {
+  line-height: 1.375;
+}
+
+html {
+  --zilla: "Zilla Slab", serif;
+  --zilla-highlight: "Zilla Slab Highlight", serif;
+  --inter: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-size: calc(1em + 0.5vw);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--zilla);
+}
+
+a:link, a:visited {
+  text-decoration-color: black;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 0.125em;
+}
+a:hover, a:focus, a:active {
+  text-decoration-color: currentColor;
+}
+
+strong {
+  font-family: var(--zilla-highlight);
+}
+
+ul,
+ol {
+  padding-left: 1em;
+}
+@media (min-width: 40em) {
+  ul,
+ol {
+    padding: 0;
+  }
+}
+
+blockquote {
+  border-left: 0.5em solid silver;
+  font-size: 1.1em;
+  margin-left: 0;
+  padding-left: 0.5em;
+}
+
+body {
+  display: grid;
+  grid: "banner" auto "nav" auto "main" 1fr/auto;
+}
+@media (min-width: 40em) {
+  body {
+    grid: "banner banner banner" auto "nav main ." 1fr/1fr minmax(auto, 40em) 1fr;
+  }
+}
+
+.banner {
+  border-bottom: 0.25em solid;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--zilla);
+  grid-area: banner;
+  justify-content: space-between;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+.banner a:link,
+.banner a:visited {
+  text-decoration: none;
+}
+.banner a:hover,
+.banner a:focus,
+.banner a:active {
+  text-decoration: inherit;
+}
+
+.docs-nav {
+  grid-area: nav;
+  padding: 0 1em;
+}
+@media (min-width: 40em) {
+  .docs-nav {
+    float: left;
+    padding: 2em 1em;
+  }
+}
+.docs-nav strong {
+  display: block;
+  margin-top: 1em;
+}
+.docs-nav ul {
+  margin: 0.5em;
+  padding: 0;
+}
+
+.not-active {
+  text-decoration: none;
+}
+
+.is-active {
+  color: black;
+}
+
+main {
+  display: flow-root;
+  grid-area: main;
+  max-width: 40em;
+  padding: 1em;
+}
+
+.version-error {
+  background: maroon !important;
+}
+.version-error::after {
+  content: "[versions don't match]";
+}
+
 /**
  * a11y-dark theme for JavaScript, CSS, and HTML
  * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
@@ -287,7 +502,6 @@ pre[class*=language-] {
   background: none;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   text-align: left;
-  white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
@@ -434,30 +648,21 @@ pre[class*=language-] {
     font-weight: normal;
   }
 }
-html {
-  --zilla: "Zilla Slab", serif;
-  --zilla-highlight: "Zilla Slab Highlight", serif;
-  --inter: "Inter", sans-serif;
-  font-family: "Inter", sans-serif;
-  font-size: calc(1em + 0.25vw);
+code,
+pre {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 }
 
-body {
-  padding: 1em;
-  margin: 1em auto;
-  max-width: 40em;
+code {
+  font-size: 0.8em;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: var(--zilla);
-}
-
-strong {
-  font-family: var(--zilla-highlight);
+code:not([class*=language-]) {
+  background: #2b2b2b;
+  border-radius: 0.3em;
+  color: #f8f8f2;
+  display: inline-block;
+  padding: 0.1em 0.4em;
 }
 
 /*# sourceMappingURL=style.css.map */

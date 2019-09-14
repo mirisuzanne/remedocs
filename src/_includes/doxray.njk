@@ -6,13 +6,15 @@
   </h3>
 {% endmacro %}
 
-{% macro describe(note, links) %}
-  {{ note | md | safe }}
-  {{ see(links) }}
+{% macro describe(pattern) %}
+  {{ pattern.note | md | safe }}
+  {{ see(pattern.links) }}
+  {{ todo(pattern.todo) }}
 {% endmacro %}
 
 {% macro see(links) %}
   {% if links %}
+    <h4>Links:</h4>
     <ul>
       {% for link in links %}
         <li>{{ link | mdInline | safe }}</li>
@@ -21,8 +23,16 @@
   {% endif %}
 {% endmacro %}
 
-{% macro highlight(css) %}
+{% macro todo(content) %}
+  {% if content %}
+    <h4>Todo:</h4>
+    {{ content | md | safe }}
+  {% endif %}
+{% endmacro %}
+
+{% macro code(css) %}
   {% if css %}
+    <h4>CSS:</h4>
     {% highlight "css" %}{{ css }}{% endhighlight %}
   {% endif %}
 {% endmacro %}
