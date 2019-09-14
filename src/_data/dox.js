@@ -2,9 +2,14 @@ const path = require('path');
 const doxray = require('doxray');
 const fs = require('fs');
 
+// relative path from the root directory of remedocs
+// to the root directory of any package to be documented
 const remeDir = '../cssremedy/';
 
+// relative path from remeDir to CSS documents inside the project
 const styleDir = path.join(remeDir, 'css/');
+
+// probably not going to change…
 const pkgJson = path.join(remeDir, 'package.json');
 
 module.exports = function() {
