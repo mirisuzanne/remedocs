@@ -1,45 +1,58 @@
 /* doxray
 label: Core Remedies
+
 note: |
   These remedies are recommended
   as a starter for any project.
-docs: meta
+
+category: file
 */
 
 
 /* doxray
 label: Box Sizing
-note: Use border-box by default, globally.
-docs: global
+
+note: |
+  Use border-box by default, globally.
+
+category: global
 */
 *, ::before, ::after { box-sizing: border-box; }
 
 
 /* doxray
 label: Line Sizing
+
 note: |
   Consistent line-spacing,
   even when inline elements have different line-heights.
+
 links:
-  - title: CSS Inline Layout Module Level 3
-    url: https://drafts.csswg.org/css-inline-3/#line-sizing-property
-docs: global
+  - https://drafts.csswg.org/css-inline-3/#line-sizing-property
+
+category: global
 */
 html { line-sizing: normal; }
 
 
 /* doxray
 label: Body Margins
-note: Remove the tiny space around the edge of the page.
-docs: global
+
+note: |
+  Remove the tiny space around the edge of the page.
+
+category: global
 */
 body { margin: 0; }
 
 
 /* doxray
 label: Heading Sizes
-note: Switch to rem units for headings
-docs: typography
+
+note: |
+  Switch to rem units for headings
+
+category: typography
 */
 h1 { font-size: 2rem; }
 h2 { font-size: 1.5rem; }
@@ -51,27 +64,35 @@ h6 { font-size: 0.67rem; }
 
 /* doxray
 label: H1 Margins
-note: Keep h1 margins consistent, even when nested
-docs: typography
+
+note: |
+  Keep h1 margins consistent, even when nested.
+
+category: typography
 */
 h1 { margin: 0.67em 0; }
 
 
 /* doxray
 label: Pre Wrapping
-note: Overflow by default is bad...
-docs: typography
+
+note: |
+  Overflow by default is bad...
+
+category: typography
 */
 pre { white-space: pre-wrap; }
 
 
 /* doxray
 label: Horizontal Rule
+
 note: |
-  1. Solid, thin horizonatal rules
+  1. Solid, thin horizontal rules
   2. Remove Firefox `color: gray`
   3. Remove default `1px` height, and common `overflow: hidden`
-docs: typography
+
+  category: typography
 */
 hr {
   border-style: solid;
@@ -84,11 +105,13 @@ hr {
 
 /* doxray
 label: Responsive Embeds
+
 note: |
   1. Block display is usually what we want
   2. Remove strange space-below when inline
   3. Responsive by default
-docs: embedded elements
+
+category: embedded elements
 */
 img, svg, video, canvas, audio, iframe, embed, object {
   display: block;
@@ -99,12 +122,14 @@ img, svg, video, canvas, audio, iframe, embed, object {
 
 /* doxray
 label: Aspect Ratios
+
 note: |
   Maintain intrinsic aspect ratios when `max-width` is applied.
   `iframe`, `embed`, and `object` are also embedded,
   but have no intrinsic ratio,
   so their `height` needs to be set explicitly.
-docs: embedded elements
+
+category: embedded elements
 */
 img, svg, video, canvas {
   height: auto;
@@ -113,34 +138,45 @@ img, svg, video, canvas {
 
 /* doxray
 label: Audio Width
+
 note: |
   There is no good reason elements default to 300px,
-  and audio files are unlikely to come with a width attribute
-docs: embedded elements
+  and audio files are unlikely to come with a width attribute.
+
+category: embedded elements
 */
 audio { width: 100%; }
 
 
 /* doxray
 label: Image Borders
-note: Remove the border on images inside links in IE 10 and earlier
-docs: legacy browsers
+
+note: |
+  Remove the border on images inside links in IE 10 and earlier.
+
+category: legacy browsers
 */
 img { border-style: none; }
 
 
 /* doxray
 label: SVG Overflow
-note: Hide the overflow in IE 10 and earlier
-docs: legacy browsers
+
+note: |
+  Hide the overflow in IE 10 and earlier.
+
+category: legacy browsers
 */
 svg { overflow: hidden; }
 
 
 /* doxray
 label: HTML5 Elements
-note: Default block display on HTML5 elements
-docs: legacy browsers
+
+note: |
+  Default block display on HTML5 elements
+
+category: legacy browsers
 */
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
@@ -149,10 +185,12 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 /* doxray
 label: Checkbox & Radio Inputs
+
 note: |
   1. Add the correct box sizing in IE 10
   2. Remove the padding in IE 10
-docs: legacy browsers
+
+category: legacy browsers
 */
 [type='checkbox'],
 [type='radio'] {

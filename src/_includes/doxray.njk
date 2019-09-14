@@ -1,0 +1,28 @@
+{% macro heading(label, slug) %}
+  <h3>
+    <a href="#{{ slug }}">
+      {{ label }}
+    </a>
+  </h3>
+{% endmacro %}
+
+{% macro describe(note, links) %}
+  {{ note | md | safe }}
+  {{ see(links) }}
+{% endmacro %}
+
+{% macro see(links) %}
+  {% if links %}
+    <ul>
+      {% for link in links %}
+        <li>{{ link | mdInline | safe }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{% macro highlight(css) %}
+  {% if css %}
+    {% highlight "css" %}{{ css }}{% endhighlight %}
+  {% endif %}
+{% endmacro %}

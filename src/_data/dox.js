@@ -2,11 +2,26 @@ const path = require('path');
 const doxray = require('doxray');
 const fs = require('fs');
 
-const styleDir = './_remedy/';
+const remeDir = '../cssremedy/';
+
+const styleDir = path.join(remeDir, 'css/');
+const pkgJson = path.join(remeDir, 'package.json');
 
 module.exports = function() {
+  const repo = {}
   const css = [];
+  const md = [];
 
+  // get the package
+  fs.readFile(pkgJson, 'utf8', (err, data) => {
+    if (err) throw err;
+    const json = JSON.parse(data);
+    Object.keys(json).forEach(key => {
+      repo[key] = json[key];
+    });
+  });
+
+  // get the styles
   fs.readdir(styleDir, (err, files) => {
     if (err) throw err;
 
@@ -16,12 +31,40 @@ module.exports = function() {
       const filePath = path.join(styleDir, file);
       const docs = doxray([filePath]);
 
-      data.info = docs.patterns.filter(pattern => pattern.docs === 'meta')[0];
-      data.patterns = docs.patterns.filter(pattern => pattern.docs !== 'meta');
+      data.info = docs.patterns.filter(pattern => pattern.category === 'file')[0];
+      data.patterns = docs.patterns.filter(pattern => pattern.category !== 'file');
 
       css.push(data);
     });
   });
 
-  return css;
+  // get any markdown
+  fs.readdir(remeDir, (err, files) => {
+    if (err) throw err;
+
+    files
+      .filter(file => file.endsWith('.md'))
+      .forEach(file => {
+        const data = {
+          info: {
+            filename: file,
+            label: file.split('.')[0]
+          }
+        };
+
+        const filePath = path.join(remeDir, file);
+        fs.readFile(filePath, 'utf8', (err, txt) => {
+          if (err) throw err;
+          data.content = txt;
+        });
+
+        md.push(data);
+      });
+  });
+
+  return {
+    repo,
+    css,
+    md
+  };
 };

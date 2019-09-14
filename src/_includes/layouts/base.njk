@@ -8,33 +8,37 @@
   <title>
     {{ meta_title }}
     {{ '|' if meta_title else '' }}
-    {{repo.name }}
+    {{ dox.repo.name }}
   </title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+  {% import "nav.njk" as nav %}
+
   <header>
-    <a href="/" rel="home">{{ repo.name }}</a>
-    by <strong>Mozilla Developer Relations</strong>
+    <a href="/" rel="home">{{ dox.repo.name }}</a>
+    <a href="{{ site.mozdev }}">{{ site.author | mdInline | safe }}</a>
   </header>
 
   <nav>
     <ul>
       <li>
-        <a href="{{ repo.github }}">
-          GitHub »
-        </a>
+        <a href="/docs/readme/">Documentation</a>
       </li>
-
-      {% for file in dox %}
       <li>
-        <a href="/docs/{{ file.info.slug }}/" data-nav="docs/{{ file.info.slug }}">
-          {{ file.info.label }}
-        </a>
+        <a href="{{ site.github }}">Github</a>
       </li>
-      {% endfor %}
     </ul>
   </nav>
+
+  {% if docs_nav %}
+    <nav class="docs">
+      <strong>Information</strong>
+      {{ nav.docs(dox.md) }}
+      <strong>Remedies</strong>
+      {{ nav.docs(dox.css) }}
+    </nav>
+  {% endif %}
 
   <main>
     <h1>

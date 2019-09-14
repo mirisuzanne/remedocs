@@ -1,34 +1,46 @@
 /* doxray
 label: Reminders
+
 note: |
-  These are not universally recommended remedies,
-  but they are good to consider,
-  and they might work for you.
-docs: meta
+  All the remedies in this file are commented out by default,
+  because they could cause harm as general defaults.
+  These should be used as reminders
+  to handle common styling issues
+  in a way that will work for your project and users.
+  Read, explore, uncomment, and edit as needed.
+
+category: file
 */
 
 
 /* doxray
 label: List Style
+
 note: |
   List styling is not usually desired in navigation,
   but this also removes list-semantics for screen-readers
-issue: https://github.com/mozdevs/cssremedy/issues/15
-docs: navigation
+
+links:
+  - https://github.com/mozdevs/cssremedy/issues/15
+
+category: navigation
 */
 nav ul {
   list-style: none;
 }
 
+
 /* doxray
 label: List Voiceover
+
 note: |
   1. Add zero-width-space to prevent VoiceOver disable
   2. Absolute position ensures no extra space
+
 links:
-  - title: "VoiceOver and list-style-type: none"
-    url: https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/
-docs: navigation
+  - https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/
+
+category: navigation
 */
 nav li:before {
   content: "\200B";
@@ -38,13 +50,17 @@ nav li:before {
 
 /* doxray
 label: Reduced Motion
+
 note: |
   1. Immediately jump any animation to the end point
   2. Remove transitions & fixed background attachment
-issue: https://github.com/mozdevs/cssremedy/issues/11
-docs: accessibility
+
+links:
+  - https://github.com/mozdevs/cssremedy/issues/11
+
+category: accessibility
 */
-@media (prefers-reduced-motion: reduce) {
+/* @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-delay: -1s !important;
     animation-duration: 1s !important;
@@ -53,19 +69,23 @@ docs: accessibility
     scroll-behavior: auto !important;
     transition-duration: 0s !important;
   }
-}
+} */
 
 
 /* doxray
 label: Line Heights
+
 note: |
   The default `normal` line-height is tightly spaced,
   but takes font-metrics into account --
   which is important for many fonts.
   Looser spacing may improve readability,
   but may also cause problems in some scripts.
-issue: https://github.com/mozdevs/cssremedy/issues/7
-docs: typography
+
+links:
+  - https://github.com/mozdevs/cssremedy/issues/7
+
+category: typography
 */
 html { line-height: 1.5; }
 h1, h2, h3, h4, h5, h6 { line-height: 1.25; }

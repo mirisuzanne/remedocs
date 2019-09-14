@@ -1,30 +1,24 @@
 ---
 layout: base
+docs_nav: true
 ---
 
-<code>{{ css.info.filename }}</code>
+{% import "doxray.njk" as doxray %}
 
-{{ css.info.note | md | safe }}
+<code>v{{ dox.repo.version }}</code>
+{{ doxray.describe(file.info.note, file.info.links) }}
+{{ doxray.highlight(file.info.css) }}
 
-{% for group, patterns in css.patterns | groupby("docs") %}
+{% for group, patterns in file.patterns | groupby("docs") %}
+<hr>
 <section>
   <h2>{{ group or 'General' }}</h2>
 
   {% for pattern in patterns %}
   <article id="{{ pattern.slug }}">
-    <h3>
-      <a href="#{{ pattern.slug }}">
-        {{ pattern.label }}
-      </a>
-    </h3>
-
-    {% if pattern.issue %}
-      <a href="{{ pattern.issue }}">
-        github issue
-      </a>
-    {% endif %}
-    {{ pattern.note | md | safe }}
-    {% highlight "css" %}{{ pattern.css }}{% endhighlight %}
+    {{ doxray.heading(pattern.label, pattern.slug) }}
+    {{ doxray.describe(pattern.note, pattern.links) }}
+    {{ doxray.highlight(pattern.css) }}
   </article>
   {% endfor %}
 

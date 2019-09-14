@@ -1,0 +1,16 @@
+{% macro docs(files) %}
+  <ul>
+    {% for file in files %}
+      {{ doc(file.info.label, file.info.slug) }}
+    {% endfor %}
+  </ul>
+{% endmacro %}
+
+{% macro doc(label, slug) %}
+  {% set slug = slug or label | slug %}
+  <li>
+    <a href="/docs/{{ slug }}/">
+      {{ label }}
+    </a>
+  </li>
+{% endmacro %}

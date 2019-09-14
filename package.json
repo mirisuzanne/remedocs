@@ -8,7 +8,7 @@
     "build-site": "npx @11ty/eleventy",
     "build-sass": "sass sass/style.scss src/css/style.css",
     "build": "yarn build-sass && yarn build-site",
-    "serve": "npx @11ty/eleventy --serve",
+    "serve": "yarn build-sass && npx @11ty/eleventy --serve",
     "watch": "sass --watch sass/style.scss src/css/style.css"
   },
   "devDependencies": {
