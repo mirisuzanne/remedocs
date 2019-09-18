@@ -12,7 +12,7 @@ docs_nav: true
 {{ doxray.describe(file.info) }}
 {{ doxray.code(file.info.css) }}
 
-{% for group, patterns in file.patterns | groupby("docs") %}
+{% for group, patterns in file.patterns | groupby("category") %}
 <hr>
 <section>
   <h2>{{ group or 'General' }}</h2>
