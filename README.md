@@ -15,12 +15,13 @@ yarn
 
 ## Test setup
 
-Until we have an npm release of `cssremedy`,
-this project is setup to expect it as a sibling directory.
-If you clone both projects into the same folder,
-this project will build properly.
-
+By default, we build
+from the latest `npm` release of `cssremedy`
+in `node_modules` --
+but it may be useful to run test builds
+based on un-released code.
 If `cssremedy` is in a different location,
+like a sibling directory,
 you can edit `remeDir` in `src/_data/dox.js`:
 
 ```js
