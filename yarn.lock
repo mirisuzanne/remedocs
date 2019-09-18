@@ -78,10 +78,10 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-cssremedy@^0.1.0-beta.1:
-  version "0.1.0-beta.1"
-  resolved "https://registry.yarnpkg.com/cssremedy/-/cssremedy-0.1.0-beta.1.tgz#d9fd7d067c6d2c828b95dc3e5e026500b0c3377d"
-  integrity sha512-JwFe0btg8XUcR0ZJBcrxev0JF+j4XZ+g4aFsEHkifP8yR3PcHAnx+XqREA9QxMGm7oA4rZenCXLYe8lrqPuAxA==
+cssremedy@^0.1.0-beta.2:
+  version "0.1.0-beta.2"
+  resolved "https://registry.yarnpkg.com/cssremedy/-/cssremedy-0.1.0-beta.2.tgz#ad900aecee78b37a4a6354ad1b0ca831fd38ee13"
+  integrity sha512-6mpPQzoUQHY7fiAxWCQDgPz73j5ugz2LqU62BLohUsxYurYLdTHQc+ilPm4i52wU2SxzPTrcRMIdniE2zGfjOA==
 
 deep-equal@~0.2.1:
   version "0.2.2"

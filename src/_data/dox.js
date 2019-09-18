@@ -4,7 +4,7 @@ const fs = require('fs');
 
 // relative path from the root directory of remedocs
 // to the root directory of any package to be documented
-const remeDir = '../cssremedy/';
+const remeDir = 'node_modules/cssremedy/';
 
 // relative path from remeDir to CSS documents inside the project
 const styleDir = path.join(remeDir, 'css/');
