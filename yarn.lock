@@ -78,6 +78,11 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
+cssremedy@^0.1.0-beta.1:
+  version "0.1.0-beta.1"
+  resolved "https://registry.yarnpkg.com/cssremedy/-/cssremedy-0.1.0-beta.1.tgz#d9fd7d067c6d2c828b95dc3e5e026500b0c3377d"
+  integrity sha512-JwFe0btg8XUcR0ZJBcrxev0JF+j4XZ+g4aFsEHkifP8yR3PcHAnx+XqREA9QxMGm7oA4rZenCXLYe8lrqPuAxA==
+
 deep-equal@~0.2.1:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-0.2.2.tgz#84b745896f34c684e98f2ce0e42abaf43bba017d"
@@ -88,10 +93,10 @@ delegate@^3.1.2:
   resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.2.0.tgz#b66b71c3158522e8ab5744f720d8ca0c2af59166"
   integrity sha512-IofjkYBZaZivn0V8nnsMJGBr4jVLxHDheKSW88PyxS5QC4Vo9ZbZVvhzlSxY87fVq3STR6r+4cGepyHkcWOQSw==
 
-doxray@^0.7.2:
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/doxray/-/doxray-0.7.3.tgz#f0a1dfe00be17e02a4fc4937fe04e3573a45d796"
-  integrity sha512-Wxe4FfJeM4KUybnbafVJV40OSGt7rs/5TYYqJ7re/D8pXG9Pg0/gF8zODQl9f7Y5lVj1OJ/9jRmrQQqsNzgKyw==
+doxray@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/doxray/-/doxray-0.8.1.tgz#41ae853606feb16e3b6f0f0bb32173f7071b94d9"
+  integrity sha512-rOSThg+4Okiid+joYCwa+i1MtNjpwqzCAZZyyYULYy+iYmPQVENsbKUHAhSvInfHgyb10BoCHv9EFVZecIdWaQ==
   dependencies:
     deep-equal "~0.2.1"
     glob "~5.0.5"

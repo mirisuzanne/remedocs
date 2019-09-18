@@ -12,6 +12,17 @@ const styleDir = path.join(remeDir, 'css/');
 // probably not going to change…
 const pkgJson = path.join(remeDir, 'package.json');
 
+// define the documentation regex…
+const doxOptions = {
+  regex: {
+    css: {
+      opening: /^\/\*\s*@docs[^\n]*\n/m,
+      closing: /\*\//,
+      comment: /^\/\*\s*@docs[^*]*\*+(?:[^/*][^*]*\*+)*\//gm
+    }
+  }
+};
+
 module.exports = function() {
   const repo = {}
   const css = [];
@@ -34,7 +45,7 @@ module.exports = function() {
       const data = {};
 
       const filePath = path.join(styleDir, file);
-      const docs = doxray([filePath]);
+      const docs = doxray([filePath], doxOptions);
 
       data.info = docs.patterns.filter(pattern => pattern.category === 'file')[0];
       data.patterns = docs.patterns.filter(pattern => pattern.category !== 'file');

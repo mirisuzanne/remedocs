@@ -396,20 +396,23 @@ a:link, a:visited {
 }
 a:hover, a:focus, a:active {
   text-decoration-color: currentColor;
+  text-decoration-thickness: 0.25em;
 }
 
 strong {
   font-family: var(--zilla-highlight);
 }
 
-ul,
-ol {
+ul ul,
+ul ol,
+ol ul,
+ol ol {
   padding-left: 1em;
 }
-@media (min-width: 40em) {
+@media (max-width: 40em) {
   ul,
 ol {
-    padding: 0;
+    padding: 1em;
   }
 }
 

@@ -28,6 +28,7 @@ a {
   &:focus,
   &:active {
     text-decoration-color: currentColor;
+    text-decoration-thickness: 0.25em;
   }
 }
 
@@ -37,10 +38,15 @@ strong {
 
 ul,
 ol {
-  padding-left: 1em;
+  // outdent non-nested lists
+  ul,
+  ol {
+    padding-left: 1em;
+  }
 
-  @media (min-width: 40em) {
-    padding: 0;
+  // indent lists on small screens
+  @media (max-width: 40em) {
+    padding: 1em;
   }
 }
 
