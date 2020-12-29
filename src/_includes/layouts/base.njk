@@ -4,42 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  {% set meta_title = renderData.title or title %}
   <title>
-    {{ meta_title }}
-    {{ '|' if meta_title else '' }}
+    {{ title }}
+    {{ '|' if title else '' }}
     {{ dox.repo.name }}
   </title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  {% import "nav.njk" as nav %}
+  <a href="#content" class="skip-to-content">Skip to content</a>
 
   <header class="banner">
     <a href="/" rel="home">
-      <strong>{{ dox.repo.name }}</strong>
-      docs
+      <strong>{{ site.title }}</strong> Documentation
     </a>
-    <a href="{{ site.mozdev }}">{{ site.author | mdInline | safe }}</a>
+
+    <div class="banner-meta">
+      <code>v{{ dox.repo.version }}</code>
+      <a href="{{ site.github }}">Source Code</a>
+    </div>
   </header>
 
-  {% if docs_nav %}
-    <nav class="docs-nav">
-      <strong>Information</strong>
-      {{ nav.docs(dox.md, page) }}
-      <strong>Remedies</strong>
-      {{ nav.docs(dox.css, page) }}
-    </nav>
-  {% endif %}
+  <nav class="docs-nav">
+    {% import "nav.njk" as nav %}
+    <strong>Information</strong>
+    {{ nav.docs(dox.md, page) }}
+    <strong>Remedies</strong>
+    {{ nav.docs(dox.css, page) }}
+  </nav>
 
-  <main>
+  <main id="content">
     {% if not hide_title %}
       <h1>
-        {{ (renderData.h1 or h1 or meta_title or 'Title Required') | mdInline | safe }}
+        {{ (h1 or title or '@@@ Title Required') | mdInline | safe }}
       </h1>
     {% endif %}
 
     {{ content | safe }}
   </main>
+
+  <footer>
+    {% set comma = joiner() %}
+
+    <strong>{{ site.title }}</strong>
+    is a project by
+    <a href="{{ site.author.url }}">{{ site.author.name }}</a>,
+    along with
+    {% for contributor in site.contributors -%}
+      {{ comma() }}
+      {% if loop.last and (loop.index > 1) %}and{% endif %}
+      <a href="{{ contributor.url }}">{{ contributor.name }}</a>
+    {%- endfor %}.
+  </footer>
 </body>
 </html>

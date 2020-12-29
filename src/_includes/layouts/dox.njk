@@ -1,13 +1,14 @@
 ---
 layout: base
-docs_nav: true
 ---
 
 {% import "doxray.njk" as doxray %}
 
-<code {% if dox.repo.version != file.info.version %}class="version-error"{% endif %}>
-  v{{ file.info.version }}
-</code>
+{% if dox.repo.version != file.info.version %}
+  <code class="version-error">
+    v{{ file.info.version }}
+  </code>
+{% endif %}
 
 {{ doxray.describe(file.info) }}
 {{ doxray.code(file.info.css) }}

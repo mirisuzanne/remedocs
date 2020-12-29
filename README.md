@@ -1,4 +1,4 @@
-# remedocs
+# RemeDocs
 
 Generate CSS documentation for
 [CSS Remedy](https://github.com/mozdevs/cssremedy/),
@@ -7,17 +7,28 @@ as a static-site generator
 and [Doxray](https://github.com/himedlooff/doxray)
 to parse CSS comments.
 
+We try to keep this build step minimal,
+but we also want the docs to update automatically --
+so that does require a few JavaScript dependencies.
+Follow these steps to build the site locally.
+
 ## Install dependencies
 
+You'll need NPM and access to a command-line terminal.
+
+Open a command-line terminal
+in the main `remedocs/` directory,
+and run:
+
 ```
-yarn
+npm install
 ```
 
 ## Test setup
 
 By default, we build
 from the latest `npm` release of `cssremedy`
-in `node_modules` --
+which installs to the `node_modules/` folder --
 but it may be useful to run test builds
 based on un-released code.
 If `cssremedy` is in a different location,
@@ -30,33 +41,34 @@ you can edit `remeDir` in `src/_data/dox.js`:
 const remeDir = '../cssremedy/';
 ```
 
-If you want to try running `rermedocs` on another project,
-you can also change `styleDir`
-to match the internal structure of that project:
-
-```js
-// relative path from remeDir to CSS documents inside the project
-const styleDir = path.join(remeDir, 'css/');
-```
-
 ## Build the site
 
 ```
-yarn build
+npm run build
 ```
 
 ## Run a development server
 
 ```
-yarn serve
+npm run serve
 ```
 
-Your site will be available at `localhost:8080`
+The site will be available
+in your browser of choice
+at `localhost:8080`,
+and update when changes are detected.
 
-## Watch Sass files
+## Update `remedy/reminders`
 
-Currently you have to run the server and watcher in separate terminals:
+The documentation of CSS Remedy will happen automatically,
+but we also use CSS Remedy to style the generated site.
+Since the entire "reminders" file is commented-out by default,
+any update will require copying and editing that file.
 
 ```
-yarn watch
+cp node_modules/cssremedy/css/reminders.css sass/remedy/_reminders.css
 ```
+
+Remember to un-comment
+the reminders that are desired
+in the documentation.

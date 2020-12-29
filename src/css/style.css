@@ -1,66 +1,6 @@
-@charset "UTF-8";
-@font-face {
-  font-family: "Inter";
-  src: url("../fonts/inter-regular-webfont.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Inter";
-  src: url("../fonts/inter-italic-webfont.woff2") format("woff2");
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Inter";
-  src: url("../fonts/inter-bold-webfont.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Inter";
-  src: url("../fonts/inter-bolditalic-webfont.woff2") format("woff2");
-  font-weight: bold;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Zilla Slab";
-  src: url("../fonts/ZillaSlab-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Zilla Slab";
-  src: url("../fonts/ZillaSlab-Italic.woff2") format("woff2");
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Zilla Slab";
-  src: url("../fonts/ZillaSlab-Bold.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Zilla Slab";
-  src: url("../fonts/ZillaSlab-BoldItalic.woff2") format("woff2");
-  font-weight: bold;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Zilla Slab Highlight";
-  src: url("../fonts/ZillaSlabHighlight-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Zilla Slab Highlight";
-  src: url("../fonts/ZillaSlabHighlight-Bold.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-}
-/* doxray
+/* @docs
 label: Core Remedies
+version: 0.1.0-beta.2
 
 note: |
   These remedies are recommended
@@ -68,7 +8,7 @@ note: |
 
 category: file
 */
-/* doxray
+/* @docs
 label: Box Sizing
 
 note: |
@@ -80,7 +20,7 @@ category: global
   box-sizing: border-box;
 }
 
-/* doxray
+/* @docs
 label: Line Sizing
 
 note: |
@@ -96,7 +36,7 @@ html {
   line-sizing: normal;
 }
 
-/* doxray
+/* @docs
 label: Body Margins
 
 note: |
@@ -108,7 +48,7 @@ body {
   margin: 0;
 }
 
-/* doxray
+/* @docs
 label: Heading Sizes
 
 note: |
@@ -140,7 +80,7 @@ h6 {
   font-size: 0.67rem;
 }
 
-/* doxray
+/* @docs
 label: H1 Margins
 
 note: |
@@ -152,7 +92,7 @@ h1 {
   margin: 0.67em 0;
 }
 
-/* doxray
+/* @docs
 label: Pre Wrapping
 
 note: |
@@ -164,7 +104,7 @@ pre {
   white-space: pre-wrap;
 }
 
-/* doxray
+/* @docs
 label: Horizontal Rule
 
 note: |
@@ -172,7 +112,7 @@ note: |
   2. Remove Firefox `color: gray`
   3. Remove default `1px` height, and common `overflow: hidden`
 
-  category: typography
+category: typography
 */
 hr {
   border-style: solid;
@@ -182,7 +122,7 @@ hr {
   overflow: visible;
 }
 
-/* doxray
+/* @docs
 label: Responsive Embeds
 
 note: |
@@ -198,7 +138,7 @@ img, svg, video, canvas, audio, iframe, embed, object {
   max-width: 100%;
 }
 
-/* doxray
+/* @docs
 label: Aspect Ratios
 
 note: |
@@ -213,7 +153,7 @@ img, svg, video, canvas {
   height: auto;
 }
 
-/* doxray
+/* @docs
 label: Audio Width
 
 note: |
@@ -226,7 +166,7 @@ audio {
   width: 100%;
 }
 
-/* doxray
+/* @docs
 label: Image Borders
 
 note: |
@@ -238,7 +178,7 @@ img {
   border-style: none;
 }
 
-/* doxray
+/* @docs
 label: SVG Overflow
 
 note: |
@@ -250,7 +190,7 @@ svg {
   overflow: hidden;
 }
 
-/* doxray
+/* @docs
 label: HTML5 Elements
 
 note: |
@@ -262,7 +202,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
-/* doxray
+/* @docs
 label: Checkbox & Radio Inputs
 
 note: |
@@ -277,8 +217,9 @@ category: legacy browsers
   padding: 0;
 }
 
-/* doxray
+/* @docs
 label: Reminders
+version: 0.1.0-beta.2
 
 note: |
   All the remedies in this file are commented out by default,
@@ -290,7 +231,7 @@ note: |
 
 category: file
 */
-/* doxray
+/* @docs
 label: List Style
 
 note: |
@@ -302,11 +243,10 @@ links:
 
 category: navigation
 */
-nav ul {
+/* nav ul {
   list-style: none;
-}
-
-/* doxray
+} */
+/* @docs
 label: List Voiceover
 
 note: |
@@ -318,12 +258,11 @@ links:
 
 category: navigation
 */
-nav li:before {
-  content: "​";
+/* nav li:before {
+  content: "\200B";
   position: absolute;
-}
-
-/* doxray
+} */
+/* @docs
 label: Reduced Motion
 
 note: |
@@ -345,18 +284,28 @@ category: accessibility
     transition-duration: 0s !important;
   }
 } */
-/* doxray
+/* @docs
 label: Line Heights
 
 note: |
   The default `normal` line-height is tightly spaced,
-  but takes font-metrics into account --
+  but takes font-metrics into account,
   which is important for many fonts.
-  Looser spacing may improve readability,
-  but may also cause problems in some scripts.
+  Looser spacing may improve readability in latin type,
+  but may cause problems in some scripts --
+  from cusrive/fantasy fonts to
+  [Javanese](https://jsbin.com/bezasax/1/edit?html,css,output),
+  [Persian](https://jsbin.com/qurecom/edit?html,css,output),
+  and CJK languages.
 
 links:
   - https://github.com/mozdevs/cssremedy/issues/7
+  - https://jsbin.com/bezasax/1/edit?html,css,output
+  - https://jsbin.com/qurecom/edit?html,css,output
+
+todo: |
+  - Use `:lang(language-code)` selectors?
+  - Add typography remedies for other scripts & languages...
 
 category: typography
 */
@@ -372,35 +321,70 @@ caption, figcaption, label, legend {
   line-height: 1.375;
 }
 
-html {
-  --zilla: "Zilla Slab", serif;
-  --zilla-highlight: "Zilla Slab Highlight", serif;
-  --inter: "Inter", sans-serif;
-  font-family: "Inter", sans-serif;
-  font-size: calc(1em + 0.5vw);
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: var(--zilla);
+.skip-to-content:link, .skip-to-content:visited {
+  background: var(--action, blue);
+  color: var(--bg, white);
+  padding: 0.5em 1em;
+  position: absolute;
+  transform: translateY(var(--skip-y, -100%));
+  transition: transform 100ms;
+  top: 0;
+}
+.skip-to-content:focus {
+  --skip-y: 0;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: medium dotted var(--text);
+  outline-offset: 0.25em;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Avenir, Helvetica, sans-serif;
+  font-size: calc(1em + 0.5vw);
+  --light: #fff8f8;
+  --dark: #282222;
+  --action-light: lightcoral;
+  --action-dark: maroon;
+  --callout: hsla(0, 5%, 50%, 0.25);
+  --bg: var(--light);
+  --text: var(--dark);
+  --action: var(--action-dark);
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    --bg: var(--dark);
+    --text: var(--light);
+    --action: var(--action-light);
+  }
 }
 
 a:link, a:visited {
-  text-decoration-color: black;
+  color: var(--action);
   text-decoration-skip-ink: auto;
-  text-decoration-thickness: 0.125em;
+  text-decoration-thickness: 0.05em;
   text-underline-offset: 0.125em;
 }
 a:hover, a:focus, a:active {
-  text-decoration-color: currentColor;
-  text-decoration-thickness: 0.25em;
-}
-
-strong {
-  font-family: var(--zilla-highlight);
+  text-decoration-color: var(--text);
 }
 
 ul ul,
@@ -423,21 +407,27 @@ blockquote {
   padding-left: 0.5em;
 }
 
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
+  min-height: 100%;
+  min-width: 100%;
   display: grid;
-  grid: "banner" auto "nav" auto "main" 1fr/auto;
+  grid: "banner" auto "nav" auto "main" 1fr "footer" auto/100%;
 }
 @media (min-width: 40em) {
   body {
-    grid: "banner banner banner" auto "nav main ." 1fr/1fr minmax(auto, 40em) 1fr;
+    grid: "banner banner banner" auto "nav main ." 1fr ". footer ." auto/1fr minmax(auto, 40em) 1fr;
   }
 }
 
 .banner {
-  border-bottom: 0.25em solid;
+  border-bottom: medium solid;
   display: flex;
   flex-wrap: wrap;
-  font-family: var(--zilla);
   grid-area: banner;
   justify-content: space-between;
   margin: 0.5em;
@@ -492,6 +482,12 @@ main {
 }
 .version-error::after {
   content: "[versions don't match]";
+}
+
+footer {
+  grid-area: footer;
+  max-width: 40em;
+  padding: 1em;
 }
 
 /**
@@ -661,9 +657,8 @@ code {
 }
 
 code:not([class*=language-]) {
-  background: #2b2b2b;
+  background: var(--callout);
   border-radius: 0.3em;
-  color: #f8f8f2;
   display: inline-block;
   padding: 0.1em 0.4em;
 }

@@ -1,23 +1,24 @@
 {
   "name": "remedocs",
   "version": "1.0.0",
-  "description": "11ty docs for remedy",
-  "main": "index.js",
+  "description": "Automated eleventy documentation for CSS Remedy",
   "license": "MIT",
   "scripts": {
-    "build-site": "npx @11ty/eleventy",
-    "build-sass": "sass sass/style.scss src/css/style.css",
-    "build": "yarn build-sass && yarn build-site",
-    "serve": "yarn build-sass && npx @11ty/eleventy --serve",
-    "watch": "sass --watch sass/style.scss src/css/style.css"
+    "11ty:build": "npx @11ty/eleventy",
+    "11ty:serve": "npx @11ty/eleventy --serve",
+    "sass:build": "sass sass/style.scss src/css/style.css",
+    "sass:watch": "sass --watch sass/style.scss src/css/style.css",
+    "build": "npm run sass:build && npm run 11ty:build",
+    "serve": "npm run sass:build && npm run sass:watch & npm run 11ty:serve"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "cssremedy": "^0.1.0-beta.2",
-    "doxray": "^0.8.1",
-    "eleventy": "^0.2.0",
+    "doxray": "^0.8.2",
+    "js-yaml": "^3.14.1",
     "markdown-it": "^10.0.0",
     "markdown-it-prism": "^2.0.3",
-    "sass": "^1.22.12"
+    "sass": "^1.30.0"
   }
 }

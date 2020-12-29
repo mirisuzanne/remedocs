@@ -48,12 +48,11 @@ module.exports = function() {
       const docs = doxray([filePath], doxOptions);
 
       data.info = docs.patterns.filter(pattern => pattern.category === 'file')[0];
+      data.label = data.info.label;
       data.patterns = docs.patterns.filter(pattern => pattern.category !== 'file');
 
       css.push(data);
     });
-
-    css.sort((a, b) => a.info.label > b.info.label);
   });
 
   // get any markdown
@@ -63,10 +62,12 @@ module.exports = function() {
     files
       .filter(file => file.endsWith('.md'))
       .forEach(file => {
+        const label = file.split('.')[0];
         const data = {
+          label,
           info: {
             filename: file,
-            label: file.split('.')[0]
+            label: label
           }
         };
 
@@ -78,8 +79,6 @@ module.exports = function() {
 
         md.push(data);
       });
-
-      md.sort((a, b) => a.info.label > b.info.label);
   });
 
   return {

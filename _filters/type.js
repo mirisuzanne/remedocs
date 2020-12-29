@@ -6,7 +6,9 @@ const mdown = require('markdown-it')({
   breaks: false,
   linkify: true,
   typographer: true,
-}).use(prism);
+})
+  .use(prism)
+  .disable('code');
 
 const render = (content) => {
   return content ? mdown.render(content) : content;

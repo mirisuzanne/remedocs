@@ -5,7 +5,7 @@ pagination:
   size: 1
   alias: file
 permalink: /docs/{{ file.info.slug }}/
-renderData:
+eleventyComputed:
   title: '{{ file.info.filename }}'
   location: '{{ file.info.slug }}'
 eleventyExcludeFromCollections: true

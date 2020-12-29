@@ -1,8 +1,11 @@
 const prism = require('@11ty/eleventy-plugin-syntaxhighlight');
+const yaml = require("js-yaml");
+
 const type = require('./_filters/type');
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(prism);
+  eleventyConfig.addDataExtension("yaml", contents => yaml.safeLoad(contents));
 
   // layouts
   eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
@@ -17,7 +20,6 @@ module.exports = function(eleventyConfig) {
 
   // assets
   eleventyConfig.addPassthroughCopy("src/css");
-  eleventyConfig.addPassthroughCopy("src/fonts");
 
   return {
     markdownTemplateEngine: "njk",

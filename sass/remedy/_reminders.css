@@ -1,5 +1,6 @@
-/* doxray
+/* @docs
 label: Reminders
+version: 0.1.0-beta.2
 
 note: |
   All the remedies in this file are commented out by default,
@@ -13,7 +14,7 @@ category: file
 */
 
 
-/* doxray
+/* @docs
 label: List Style
 
 note: |
@@ -25,12 +26,12 @@ links:
 
 category: navigation
 */
-nav ul {
+/* nav ul {
   list-style: none;
-}
+} */
 
 
-/* doxray
+/* @docs
 label: List Voiceover
 
 note: |
@@ -42,13 +43,13 @@ links:
 
 category: navigation
 */
-nav li:before {
+/* nav li:before {
   content: "\200B";
   position: absolute;
-}
+} */
 
 
-/* doxray
+/* @docs
 label: Reduced Motion
 
 note: |
@@ -72,18 +73,28 @@ category: accessibility
 } */
 
 
-/* doxray
+/* @docs
 label: Line Heights
 
 note: |
   The default `normal` line-height is tightly spaced,
-  but takes font-metrics into account --
+  but takes font-metrics into account,
   which is important for many fonts.
-  Looser spacing may improve readability,
-  but may also cause problems in some scripts.
+  Looser spacing may improve readability in latin type,
+  but may cause problems in some scripts --
+  from cusrive/fantasy fonts to
+  [Javanese](https://jsbin.com/bezasax/1/edit?html,css,output),
+  [Persian](https://jsbin.com/qurecom/edit?html,css,output),
+  and CJK languages.
 
 links:
   - https://github.com/mozdevs/cssremedy/issues/7
+  - https://jsbin.com/bezasax/1/edit?html,css,output
+  - https://jsbin.com/qurecom/edit?html,css,output
+
+todo: |
+  - Use `:lang(language-code)` selectors?
+  - Add typography remedies for other scripts & languages...
 
 category: typography
 */

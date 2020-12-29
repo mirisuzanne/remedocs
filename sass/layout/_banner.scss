@@ -1,8 +1,7 @@
 .banner {
-  border-bottom: 0.25em solid;
+  border-bottom: medium solid;
   display: flex;
   flex-wrap: wrap;
-  font-family: var(--zilla);
   grid-area: banner;
   justify-content: space-between;
   margin: 0.5em;

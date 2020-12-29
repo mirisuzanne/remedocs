@@ -3,7 +3,5 @@ h1: Welcome to CSS Remedy
 layout: base
 ---
 
-`v{{ dox.repo.version }}`
-
-- [Documentation](/docs/readme/)
-- [Github ↗]({{ site.github }})
+I'm not sure if we need this page,
+or should use the README as the home page here.

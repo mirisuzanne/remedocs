@@ -1,14 +1,8 @@
-@import 'fonts';
+// CSS Remedy
+@use '../node_modules/cssremedy/css/remedy';
+@use 'remedy/reminders';
 
-@import 'remedy/remedy';
-@import 'remedy/reminders';
-
-@import 'defaults';
-
-@import 'layout';
-@import 'banner';
-@import 'nav';
-@import 'main';
-
-@import 'code/a11y-dark';
-@import 'code/prism';
+// Site styles
+@use 'defaults';
+@use 'layout';
+@use 'code';
