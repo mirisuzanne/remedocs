@@ -33,6 +33,6 @@
 {% macro code(css) %}
   {% if css %}
     <h4>CSS:</h4>
-    {% highlight "css" %}{{ css }}{% endhighlight %}
+    {% highlight "css" %}{{ css | safe }}{% endhighlight %}
   {% endif %}
 {% endmacro %}
