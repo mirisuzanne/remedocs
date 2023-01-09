@@ -12,7 +12,7 @@
     "serve": "npm run sass:build && npm run sass:watch & npm run 11ty:serve"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "cssremedy": "^0.1.0-beta.2",
     "doxray": "^0.8.2",
